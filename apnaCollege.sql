@@ -47,6 +47,26 @@ SELECT * FROM Student;
 
 INSERT INTO Student VALUES (37, 'Sourav Mehta');
 
+-- Ques 1;
+
+CREATE DATABASE IF NOT EXISTS XYZ;
+USE XYZ;
+
+CREATE TABLE IF NOT EXISTS Employee(
+	id INT PRIMARY KEY,
+    name VARCHAR(100),
+    salary INT
+);
+
+INSERT INTO Employee
+(id, name, salary)
+VALUES
+(1, 'Adam', 25000),
+(2, 'Bob', 30000),
+(3, 'Caesy', 40000);
+
+SELECT * FROM Employee;
+
 
 
 
