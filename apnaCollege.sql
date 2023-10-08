@@ -26,11 +26,26 @@ SHOW DATABASES;
 USE School;
 SHOW TABLES;
 
+-- Table related queries
+
+DROP TABLE Student;
+
+CREATE TABLE Student(
+	rollNo INT PRIMARY KEY,
+    name VARCHAR(100)
+);
+
+INSERT INTO Student
+(rollNo, name)
+VALUES
+(38, 'Sweta Bora'),
+(39, 'Tanmay Upreti'),
+(40, 'Vaibhav Joshi');
 
 
+SELECT * FROM Student;
 
-
-
+INSERT INTO Student VALUES (37, 'Sourav Mehta');
 
 
 
