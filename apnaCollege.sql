@@ -67,7 +67,42 @@ VALUES
 
 SELECT * FROM Employee;
 
+-- Keys
 
+USE XYZ;
+
+CREATE TABLE IF NOT EXISTS temp1(
+	id INT NOT NULL,
+    PRIMARY KEY (id)
+);
+
+INSERT INTO temp1 VALUES (11);
+INSERT INTO temp1 VALUES (11);
+INSERT INTO temp1 VALUES (10);
+INSERT INTO temp1 VALUES (15);
+
+SELECT * FROM temp1;
+
+USE XYZ;
+
+CREATE TABLE IF NOT EXISTS temp2(
+	id INT,
+    name VARCHAR(50),
+    age INT NOT NULL,
+    PRIMARY KEY (id, name)
+);
+
+INSERT INTO temp2 VALUES (1, 'Aayushi', 16);
+
+SELECT * FROM temp2;
+
+INSERT INTO temp2
+(id, name, age)
+VALUES
+(2, 'Aditi', 15),
+(1, 'Aayushi', 16);
+
+SELECT * FROM temp2;
 
 
 
