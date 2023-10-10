@@ -147,3 +147,10 @@ VALUES
 (38, 'Sweta', 380);
 
 SELECT * FROM student;
+
+-- SELECT Command
+-- SELECT col_1, col_2 FROM table_name;
+
+SELECT name, marks FROM student;
+
+SELECT DISTINCT marks FROM student; -- Unique
