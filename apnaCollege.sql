@@ -128,3 +128,22 @@ VALUES
 
 SELECT * FROM office;
 
+-- Sample 2
+
+CREATE DATABASE IF NOT EXISTS class;
+USE class;
+
+CREATE TABLE IF NOT EXISTS student(
+	rollNo INT PRIMARY KEY,
+    name VARCHAR(50),
+    marks INT NOT NULL
+);
+
+INSERT INTO student
+(rollNo, name, marks)
+VALUES
+(39, 'Tanmay', 396),
+(40, 'Vaibhav', 396),
+(38, 'Sweta', 380);
+
+SELECT * FROM student;
