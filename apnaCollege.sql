@@ -85,6 +85,8 @@ SELECT * FROM temp1;
 
 USE XYZ;
 
+-- Constraints 
+
 CREATE TABLE IF NOT EXISTS temp2(
 	id INT,
     name VARCHAR(50),
@@ -104,5 +106,25 @@ VALUES
 
 SELECT * FROM temp2;
 
+-- Default
 
+CREATE DATABASE IF NOT EXISTS Company;
+
+USE Company;
+
+CREATE TABLE IF NOT EXISTS office(
+	id INT PRIMARY KEY,
+    name VARCHAR(50),
+    salary INT DEFAULT 30000
+);
+
+
+INSERT INTO office (id, name) VALUES (1, 'Jay');
+INSERT INTO office
+(id, name, salary)
+VALUES
+(2, 'Naman', 31000),
+(3, 'Manas', 250);
+
+SELECT * FROM office;
 
