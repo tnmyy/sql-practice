@@ -153,4 +153,6 @@ SELECT * FROM student;
 
 SELECT name, marks FROM student;
 
+SELECT name FROM student;
+
 SELECT DISTINCT marks FROM student; -- Unique
