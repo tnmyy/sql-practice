@@ -133,20 +133,23 @@ SELECT * FROM office;
 CREATE DATABASE IF NOT EXISTS class;
 USE class;
 
+
 CREATE TABLE IF NOT EXISTS student(
 	rollNo INT PRIMARY KEY,
     name VARCHAR(50),
-    marks INT NOT NULL
+    marks INT NOT NULL,
+    grade VARCHAR(1),
+    city VARCHAR (50)
 );
 
 INSERT INTO student
-(rollNo, name, marks)
+(rollNo, name, marks, grade, city)
 VALUES
-(39, 'Tanmay', 396),
-(40, 'Vaibhav', 396),
-(38, 'Sweta', 380);
-
-SELECT * FROM student;
+(101, 'Anil', 85, 'B', 'Delhi'),
+(102, 'Amit', 45, 'D', 'Pune'),
+(103, 'Bhumika', 80, 'B', 'Lucknow'),
+(104, 'Dhurv', 55, 'D', 'Mumbai'),
+(105, 'Laxmi', 90, 'A', 'Mumbai');
 
 -- SELECT Command
 -- SELECT col_1, col_2 FROM table_name;
@@ -155,4 +158,37 @@ SELECT name, marks FROM student;
 
 SELECT name FROM student;
 
-SELECT DISTINCT marks FROM student; -- Unique
+SELECT DISTINCT city FROM student; -- Unique
+
+-- WHERE Clause(rule)
+
+SELECT *
+FROM student
+WHERE marks >= 80;
+
+
+SELECT *
+FROM student
+WHERE marks <= 50;
+
+SELECT *
+FROM student
+WHERE grade = 'B';
+
+SELECT *
+FROM student
+WHERE marks > 80 
+AND city = 'Mumbai';
+
+SELECT *
+FROM student
+WHERE marks > 80 
+AND city != 'Mumbai';
+-- IF 20 marks added then, it would be more than 100
+SELECT *
+FROM student
+WHERE marks+20>100;
+
+
+
+
