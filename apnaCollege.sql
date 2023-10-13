@@ -213,3 +213,12 @@ SELECT *
 FROM student
 WHERE city NOT IN ('Mumbai', 'Delhi','Pune');
 
+-- LIMIT Clause
+
+SELECT * FROM student LIMIT 3; -- gives only first 3 students
+
+SELECT *
+FROM student
+WHERE marks>=50
+LIMIT 3;
+
