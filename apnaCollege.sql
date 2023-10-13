@@ -222,3 +222,19 @@ FROM student
 WHERE marks>=50
 LIMIT 3;
 
+-- ORDER BY Clause
+
+SELECT *
+FROM student 
+ORDER BY name ASC; -- names in ascending order
+
+SELECT *
+FROM student 
+ORDER BY city DESC; -- city's names in descending order
+
+SELECT *
+FROM student 
+ORDER BY marks DESC
+LIMIT 3; -- marks in descending order (TOP 3 Students)
+
+
