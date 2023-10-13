@@ -175,6 +175,9 @@ SELECT *
 FROM student
 WHERE grade = 'B';
 
+-- Operators
+
+-- AND
 SELECT *
 FROM student
 WHERE marks > 80 
@@ -189,6 +192,24 @@ SELECT *
 FROM student
 WHERE marks+20>100;
 
+-- OR
+SELECT *
+FROM student
+WHERE marks > 80 
+OR city = 'Mumbai';
 
+-- BETWEEN
+SELECT *
+FROM student
+WHERE marks BETWEEN 80 AND 90; -- both inclusive
 
+-- IN
+SELECT *
+FROM student
+WHERE city IN ('Mumbai', 'Delhi','Pune', 'Pithoragarh');
+
+-- NOT IN
+SELECT *
+FROM student
+WHERE city NOT IN ('Mumbai', 'Delhi','Pune');
 
