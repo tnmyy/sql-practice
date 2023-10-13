@@ -237,4 +237,32 @@ FROM student
 ORDER BY marks DESC
 LIMIT 3; -- marks in descending order (TOP 3 Students)
 
+-- Aggregate (to collect) Functions (they returns only a single value i.e. a single cell of table)
+
+-- MAX()
+SELECT MAX(marks) FROM student;
+
+-- MIN()
+SELECT MIN(marks) FROM student;
+
+-- AVG()
+SELECT AVG(marks) FROM student;
+
+-- SUM()
+SELECT SUM(marks) FROM student;
+
+-- COUNT()
+SELECT COUNT(rollNo) FROM student; -- total number of roll numbers
+
+
+
+
+
+
+
+
+
+
+
+
 
