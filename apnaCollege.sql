@@ -256,8 +256,17 @@ SELECT COUNT(rollNo) FROM student;  -- total number of roll numbers
 
 -- GROUP BY CLAUSE
 
+SELECT city, COUNT(name)
+FROM student
+GROUP BY city;
 
+SELECT grade, COUNT(name)
+FROM student
+GROUP BY grade;
 
+SELECT city, AVG(marks)
+FROM student
+GROUP BY city;
 
 
 
