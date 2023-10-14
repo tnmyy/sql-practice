@@ -252,9 +252,9 @@ SELECT AVG(marks) FROM student;
 SELECT SUM(marks) FROM student;
 
 -- COUNT()
-SELECT COUNT(rollNo) FROM student; -- total number of roll numbers
+SELECT COUNT(rollNo) FROM student;  -- total number of roll numbers
 
-
+-- GROUP BY CLAUSE
 
 
 
