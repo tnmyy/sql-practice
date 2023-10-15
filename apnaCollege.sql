@@ -268,10 +268,30 @@ SELECT city, AVG(marks)
 FROM student
 GROUP BY city;
 
+-- Pracitce Questions
 
+-- 1
+CREATE DATABASE IF NOT EXISTS tenth;
+USE tenth;
 
+CREATE TABLE IF NOT EXISTS halfYearly
+(
+	Name VARCHAR(50),
+    Hindi INT(2),
+    English INT(2),
+    Maths INT(2),
+    Science INT(2),
+    SocialScience INT(2),
+    IT INT(2),
+    PRIMARY KEY(Name)
+);
 
-
-
+INSERT INTO halfYearly
+(Name, Hindi, English, Maths, Science, SocialScience, IT)
+VALUES
+('Tanmay', 65, 66, 70, 69, 76, 50),
+('Vaibhav', 67, 61, 75, 71, 73, 48),
+('Sweta', 69, 66, 54, 68, 75, 49),
+('Manav', 63, 58, 42, 61, 76, 42);
 
 
