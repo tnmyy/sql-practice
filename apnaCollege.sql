@@ -270,7 +270,6 @@ GROUP BY city;
 
 -- Pracitce Questions
 
--- 1
 CREATE DATABASE IF NOT EXISTS tenth;
 USE tenth;
 
@@ -293,5 +292,13 @@ VALUES
 ('Vaibhav', 67, 61, 75, 71, 73, 48),
 ('Sweta', 69, 66, 54, 68, 75, 49),
 ('Manav', 63, 58, 42, 61, 76, 42);
+
+-- 1 Total Marks
+
+SELECT Name, 
+       SUM(Hindi + English + Maths + Science + SocialScience + IT) AS TotalMarks
+FROM halfYearly
+GROUP BY Name;
+
 
 
