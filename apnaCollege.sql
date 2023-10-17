@@ -300,5 +300,50 @@ SELECT Name,
 FROM halfYearly
 GROUP BY Name;
 
+-- 2 Find Total Payment
+
+CREATE DATABASE IF NOT EXISTS Company;
+USE Company;
+
+CREATE TABLE IF NOT EXISTS PaymentTable
+(
+	id INT,
+    customer VARCHAR(50),
+    modeOfPayment VARCHAR (20),
+    city VARCHAR (40),
+    PRIMARY KEY (id)
+);
+
+INSERT INTO PaymentTable
+(id, customer, modeOfPayment, city)
+VALUES
+(101, 'Naman Bhatt', 'Netbanking', 'Bhatt Land'),
+(102, 'Jay Joshi', 'Debit Card', 'Jaipur'),
+(103, 'Siddharth Vedik', 'Credit Card', 'Uganda'),
+(104, 'Tanmay Upreti', 'UPI', 'Titan'),
+(105, 'Vaibhav Joshi', 'Netbanking', 'Wakanda'),
+(106, 'Naman Bhatt', 'Netbanking', 'Bhatt Land'),
+(107, 'Jay Joshi', 'Debit Card', 'Jaipur'),
+(108, 'Siddharth Vedik', 'Credit Card', 'Uganda'),
+(109, 'Tanmay Upreti', 'UPI', 'Titan'),
+(110, 'Vaibhav Joshi', 'Netbanking', 'Wakanda');
+
+SELECT modeOfPayment, COUNT(id)
+FROM PaymentTable
+GROUP BY modeOfPayment
+ORDER BY modeOfPayment DESC;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
