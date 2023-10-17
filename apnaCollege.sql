@@ -333,6 +333,56 @@ FROM PaymentTable
 GROUP BY modeOfPayment
 ORDER BY modeOfPayment DESC;
 
+-- HAVING Clause
+
+CREATE DATABASE IF NOT EXISTS School;
+USE School;
+
+CREATE TABLE IF NOT EXISTS students1
+(
+	rollNo INT(2),
+	name VARCHAR(50),
+	marks FLOAT(2),
+    grade VARCHAR(1),
+    city VARCHAR(30),
+    PRIMARY KEY(rollNo)
+);
+
+INSERT INTO students1
+(rollNo, name, marks, grade, city)
+VALUES
+(1, 'Tanmay', 88, 'B', 'Delhi'),
+(2, 'Vaibhav', 87.75, 'B', 'Mumbai'),
+(3, 'Sweta', 83.25, 'B', 'Noida'),
+(4, 'Manav', 71.5, 'C', 'Pune'),
+(5, 'Jatin', 19, 'E', 'Delhi'),
+(5, 'Priyanshi Kapri', 91, 'A', 'Delhi'),
+(6, 'Aditya', 55.75, 'D', 'Mumbai'),
+(7, 'Jay', 47.25, 'D', 'Noida'),
+(8, 'Manas', 33.25, 'D', 'Pune');
+
+SELECT city, COUNT(rollNo)
+FROM students1
+GROUP BY city
+HAVING MAX(marks)>80; -- On every group
+
+-- Standard ORDER
+
+-- SELECT
+-- FROM 
+-- WHERE
+-- GROUP BY
+-- HAVING 
+-- ORDER BY
+
+
+
+
+
+
+
+
+
 
 
 
