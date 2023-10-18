@@ -1,3 +1,7 @@
+
+SET SQL_SAFE_UPDATES = 0;
+-- SET SQL_SAFE_UPDATES = 1;
+
 CREATE DATABASE School;
 CREATE DATABASE IF NOT EXISTS School;
 USE School;
@@ -335,20 +339,19 @@ ORDER BY modeOfPayment DESC;
 
 -- HAVING Clause
 
-CREATE DATABASE IF NOT EXISTS School;
-USE School;
+CREATE DATABASE IF NOT EXISTS Students;
+USE Students;
 
-CREATE TABLE IF NOT EXISTS students1
+CREATE TABLE IF NOT EXISTS stu
 (
-	rollNo INT(2),
+	rollNo INT(2) PRIMARY KEY,
 	name VARCHAR(50),
-	marks FLOAT(2),
+	marks FLOAT,
     grade VARCHAR(1),
-    city VARCHAR(30),
-    PRIMARY KEY(rollNo)
+    city VARCHAR(30)
 );
 
-INSERT INTO students1
+INSERT INTO stu
 (rollNo, name, marks, grade, city)
 VALUES
 (1, 'Tanmay', 88, 'B', 'Delhi'),
@@ -356,13 +359,13 @@ VALUES
 (3, 'Sweta', 83.25, 'B', 'Noida'),
 (4, 'Manav', 71.5, 'C', 'Pune'),
 (5, 'Jatin', 19, 'E', 'Delhi'),
-(5, 'Priyanshi Kapri', 91, 'A', 'Delhi'),
-(6, 'Aditya', 55.75, 'D', 'Mumbai'),
-(7, 'Jay', 47.25, 'D', 'Noida'),
-(8, 'Manas', 33.25, 'D', 'Pune');
+(6, 'Priyanshi Kapri', 91, 'A', 'Delhi'),
+(7, 'Aditya', 55.75, 'D', 'Mumbai'),
+(8, 'Jay', 47.25, 'D', 'Noida'),
+(9, 'Manas', 33.25, 'D', 'Pune');
 
 SELECT city, COUNT(rollNo)
-FROM students1
+FROM stu
 GROUP BY city
 HAVING MAX(marks)>80; -- On every group
 
@@ -373,27 +376,43 @@ HAVING MAX(marks)>80; -- On every group
 -- WHERE
 -- GROUP BY
 -- HAVING 
--- ORDER BY
+-- ORDER BY 
+SELECT city, COUNT(rollNo)
+FROM stu
+WHERE grade = "B"
+GROUP BY city
+HAVING MAX(marks)>80
+ORDER BY city DESC;
+
+-- TABLE Related Queries
+
+-- UPDATE
+
+-- UPDATE
+-- SET
+-- WHERE
 
 
+SELECT * FROM stu
+ORDER BY grade;
 
+UPDATE stu
+SET marks = 88.50
+WHERE rollNo = 1;
 
+UPDATE stu
+SET grade = 'A'
+WHERE marks BETWEEN 80 AND 100;
 
+UPDATE stu
+SET grade = 'B'
+WHERE marks BETWEEN 60 AND 80;
 
+UPDATE stu
+SET grade = 'C'
+WHERE marks BETWEEN 50 AND 60;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+UPDATE stu
+SET marks = marks + 1;
 
 
