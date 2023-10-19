@@ -377,6 +377,7 @@ HAVING MAX(marks)>80; -- On every group
 -- GROUP BY
 -- HAVING 
 -- ORDER BY 
+
 SELECT city, COUNT(rollNo)
 FROM stu
 WHERE grade = "B"
@@ -418,10 +419,62 @@ SET marks = marks + 1;
 -- DELETE
 
 -- DELETE FROM stu, DELTES Whole Table
+
 DELETE FROM stu
 WHERE marks < 30;
 
 SELECT * FROM stu
 ORDER BY grade;
 
+-- FOREIGN KEY
+
+USE School;
+
+CREATE TABLE IF NOT EXISTS subject -- PARENT TABLE
+(
+	id INT PRIMARY KEY,
+    name VARCHAR(50)
+);
+
+CREATE TABLE IF NOT EXISTS teachers -- CHILD TABLE
+(
+	id INT PRIMARY KEY,
+    name VARCHAR(50),
+    subject_id INT,
+    FOREIGN KEY (subject_id) REFERENCES subject(id)
+);
+
+INSERT INTO subject 
+(id, name)
+VALUES
+(101, 'Physics'),
+(102, 'Chemistry'),
+(103, 'Biology'),
+(104, 'Mathematics'),
+(105, 'English'),
+(106, 'Hindi'),
+(107, 'Computer Science'),
+(108, 'Social Science');
+SELECT * FROM subject;
+
+INSERT INTO teachers 
+(id, name, subject_id)
+VALUES
+(101, 'Mr. Pushkar Kholiya', 101),
+(102, 'Mrs. Deepti Bhatt', 105),
+(103, 'Ms. Suman Chand', 102),
+(104, 'Mrs. Kamla Pal', 104),
+(105, 'Ms. Bhawna Bhatt', 106),
+(106, 'Mr. Pushkar Kholiya', 104),
+(107, 'Mrs. Meena Joshi', 108),
+(108, 'Mrs. Vandana Bisht', 108),
+(109, 'Mr. Bhuwan Chandra Joshi', 104),
+(110, 'Mr. Prafulla Gyala', 107),
+(111, 'Mr. Himashu Bagauli', 105),
+(112, 'Mrs. Chitra Joshi',106),
+(113, 'Mrs. Sunita Mahar', 104),
+(114, 'Ms. Suman Chand', 101);
+
+SELECT * FROM teachers
+ORDER BY subject_id;
 
