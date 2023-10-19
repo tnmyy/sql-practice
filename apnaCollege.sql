@@ -397,7 +397,7 @@ SELECT * FROM stu
 ORDER BY grade;
 
 UPDATE stu
-SET marks = 88.50
+SET marks = 89.50
 WHERE rollNo = 1;
 
 UPDATE stu
@@ -414,5 +414,14 @@ WHERE marks BETWEEN 50 AND 60;
 
 UPDATE stu
 SET marks = marks + 1;
+
+-- DELETE
+
+-- DELETE FROM stu, DELTES Whole Table
+DELETE FROM stu
+WHERE marks < 30;
+
+SELECT * FROM stu
+ORDER BY grade;
 
 
