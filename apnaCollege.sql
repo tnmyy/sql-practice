@@ -478,3 +478,57 @@ VALUES
 SELECT * FROM teachers
 ORDER BY subject_id;
 
+-- Cascading for FOREIGN KEY (Subject name changes => Teachers' subject will change too, If subject deleted => then Teacher(s) deleted too.)
+
+CREATE TABLE IF NOT EXISTS department -- PARENT TABLE
+(
+	id INT PRIMARY KEY,
+    name VARCHAR(50)
+);
+
+CREATE TABLE IF NOT EXISTS teacher -- CHILD TABLE
+(
+	id INT PRIMARY KEY,
+    name VARCHAR(50),
+    department_id INT,
+    FOREIGN KEY (department_id) REFERENCES department(id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);
+
+INSERT INTO department 
+(id, name)
+VALUES
+(101, 'Physics'),
+(102, 'Chemistry'),
+(103, 'Biology'),
+(104, 'Mathematics'),
+(105, 'English'),
+(106, 'Hindi'),
+(107, 'Computer Science'),
+(108, 'Social Science');
+SELECT * FROM department;
+
+INSERT INTO teacher 
+(id, name, department_id)
+VALUES
+(101, 'Mr. Pushkar Kholiya', 101),
+(102, 'Mrs. Deepti Bhatt', 105),
+(103, 'Ms. Suman Chand', 102),
+(104, 'Mrs. Kamla Pal', 104),
+(105, 'Ms. Bhawna Bhatt', 106),
+(106, 'Mr. Pushkar Kholiya', 104),
+(107, 'Mrs. Meena Joshi', 108),
+(108, 'Mrs. Vandana Bisht', 108),
+(109, 'Mr. Bhuwan Chandra Joshi', 104),
+(110, 'Mr. Prafulla Gyala', 107),
+(111, 'Mr. Himashu Bagauli', 105),
+(112, 'Mrs. Chitra Joshi',106),
+(113, 'Mrs. Sunita Mahar', 104),
+(114, 'Ms. Suman Chand', 101);
+SELECT * FROM teacher;
+
+UPDATE department
+SET id = 402
+WHERE id = 107;
+SELECT * FROM teacher;
