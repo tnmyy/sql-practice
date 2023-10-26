@@ -526,9 +526,61 @@ VALUES
 (112, 'Mrs. Chitra Joshi',106),
 (113, 'Mrs. Sunita Mahar', 104),
 (114, 'Ms. Suman Chand', 101);
-SELECT * FROM teacher;
+SELECT * FROM teacher
+ORDER BY department_id ASC;
 
 UPDATE department
 SET id = 402
 WHERE id = 107;
 SELECT * FROM teacher;
+
+-- ALTER (to change schema)
+
+USE School;
+
+CREATE TABLE IF NOT EXISTS marks
+(
+	subject VARCHAR(50),
+    marks INT(2),
+    grade VARCHAR(2)
+);
+
+INSERT INTO marks
+(subject, marks, grade)
+VALUES
+('Hindi', 65, 'B'),
+('English', 66, 'B'),
+('Mathematics', 70, 'B'),
+('Science', 69, 'B'),
+('Social Science', 76, 'A'),
+('Information Technology', 50, 'A');
+
+SELECT * FROM marks;
+
+ALTER TABLE marks
+ADD COLUMN teacher VARCHAR(50);
+SELECT * FROM marks;
+
+ALTER TABLE marks
+DROP COLUMN teacher;
+SELECT * FROM marks;
+
+ALTER TABLE marks
+RENAME TO tnmy;
+SELECT * FROM tnmy;
+
+ALTER TABLE tnmy
+RENAME TO marks;
+SELECT * FROM marks;
+
+ALTER TABLE marks
+CHANGE COLUMN marks score VARCHAR(50);
+SELECT * FROM marks;
+
+ALTER TABLE marks
+MODIFY COLUMN grade VARCHAR(1);
+SELECT * FROM marks;
+
+ALTER TABLE marks
+DROP COLUMN grade;
+SELECT * FROM marks;
