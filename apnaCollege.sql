@@ -593,6 +593,36 @@ SELECT * FROM marks;
 ALTER TABLE marks
 ADD COLUMN grade VARCHAR(50);
 
+-- Practice questions
 
+	INSERT INTO stu
+	(rollNo, name, marks, grade, city)
+	VALUES
+	(1, 'Tanmay', 88, 'B', 'Delhi'),
+	(2, 'Vaibhav', 87.75, 'B', 'Mumbai'),
+	(3, 'Sweta', 83.25, 'B', 'Noida'),
+	(4, 'Manav', 71.5, 'C', 'Pune'),
+	(5, 'Jatin', 19, 'E', 'Delhi'),
+	(6, 'Priyanshi Kapri', 91, 'A', 'Delhi'),
+	(7, 'Aditya', 55.75, 'D', 'Mumbai'),
+	(8, 'Jay', 47.25, 'D', 'Noida'),
+	(9, 'Manas', 33.25, 'D', 'Pune');
 
+ALTER TABLE stu
+RENAME TO students;
 
+-- Q 1
+
+ALTER TABLE students
+CHANGE COLUMN name full_name VARCHAR(50);
+
+-- Q 2
+
+DELETE FROM students
+WHERE marks < 50;
+
+-- Q 3
+
+ALTER TABLE students
+DROP COLUMN city;
+SELECT * FROM students;
