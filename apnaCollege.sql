@@ -673,6 +673,14 @@ FROM student AS s -- Alias (alternate name)
 INNER JOIN course AS c
 ON s.student_id = c.student_id;
 
+-- LEFT JOIN
+SELECT *
+FROM student AS A
+LEFT JOIN course AS B
+ON A.student_id = B.student_id;
 
-
+SELECT *
+FROM course AS A
+LEFT JOIN student AS B
+ON A.student_id = B.student_id;
 
