@@ -684,3 +684,13 @@ FROM course AS A
 LEFT JOIN student AS B
 ON A.student_id = B.student_id;
 
+-- RIGHT JOIN
+SELECT *
+FROM student AS A
+RIGHT JOIN course AS B
+ON A.student_id = B.student_id;
+
+SELECT *
+FROM course AS A
+RIGHT JOIN student AS B
+ON A.student_id = B.student_id;
