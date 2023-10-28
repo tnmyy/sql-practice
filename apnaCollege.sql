@@ -626,3 +626,53 @@ WHERE marks < 50;
 ALTER TABLE students
 DROP COLUMN city;
 SELECT * FROM students;
+
+-- JOINS IN SQL
+
+-- INNER JOIN
+CREATE DATABASE IF NOT EXISTS Joins;
+USE Joins;
+
+CREATE TABLE IF NOT EXISTS student
+(
+	student_id INT,
+    name VARCHAR(50)
+);
+
+CREATE TABLE IF NOT EXISTS course
+(
+	student_id INT PRIMARY KEY,
+    course VARCHAR(50)
+);
+
+INSERT INTO student
+(student_id, name)
+VALUES
+(101, 'Tanmay'),
+(102, 'Vaibhav'),
+(103, 'Naman'),
+(104, 'Naman');
+
+INSERT INTO course
+(student_id, course)
+VALUES
+(101, 'Computer Science'),
+(102, 'Mathematics'),
+(107, 'Physics'),
+(109, 'Inorganic Chemistry'),
+(110, 'Organic Chemistry'),
+(105, 'Physical Chemistry');
+
+SELECT *
+FROM student -- FIRST Table
+INNER JOIN course -- SECOND Table
+ON student.student_id = course.student_id;
+
+SELECT *
+FROM student AS s -- Alias (alternate name)
+INNER JOIN course AS c
+ON s.student_id = c.student_id;
+
+
+
+
